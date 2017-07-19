@@ -1,30 +1,21 @@
+require 'will_paginate/array'
+
 class UniversitiesController < ApplicationController
   def index
-    # @universities = University.get_universities
-    # binding.pry
     if params[:name]
       name = params[:name]
-      @universities = University.search_by_name(name)
-      # redirect_to universities_path
+      @universities = University.search_by_name(name).paginate(page: params[:page], per_page: 5)
     elsif params[:description]
       description = params[:description]
-      @universities = University.search_by_description(description)
+      @universities = University.search_by_description(description).paginate(page: params[:page], per_page: 5)
     elsif params[:population]
       population = params[:population]
-      @universities = University.search_by_population(population)
+      @universities = University.search_by_population(population).paginate(page: params[:page], per_page: 5)
     elsif params[:mascot]
       mascot = params[:mascot]
-      @universities = University.search_by_mascot(mascot)
-    elsif params[:page1]
-      @universities = University.paginate1
-    elsif params[:page2]
-      @universities = University.paginate2
-    elsif params[:page3]
-      @universities = University.paginate3
-    elsif params[:page4]
-      @universities = University.paginate4
+      @universities = University.search_by_mascot(mascot).paginate(page: params[:page], per_page: 5)
     else
-      @universities = University.get_universities
+      @universities = University.get_universities.paginate(page: params[:page], per_page: 5)
     end
   end
 end
