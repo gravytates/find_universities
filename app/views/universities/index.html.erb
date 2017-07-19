@@ -8,6 +8,7 @@
   <%= submit_tag("Name Search") %>
 <% end %>
 
+
 <br>
 
 <%= form_tag('/description_search', method: 'get') do %>
@@ -36,6 +37,25 @@
   <%= text_field_tag(:mascot) %>
   <br>
   <%= submit_tag("Mascot Search") %>
+<% end %>
+
+<br>
+
+<%= form_tag('/paginate1', method: 'get') do %>
+  <%= hidden_field_tag(:page1) %>
+  <%= submit_tag("1-10") %>
+<% end %>
+<%= form_tag('/paginate2', method: 'get') do %>
+  <%= hidden_field_tag(:page2) %>
+  <%= submit_tag("11-20") %>
+<% end %>
+<%= form_tag('/paginate3', method: 'get') do %>
+  <%= hidden_field_tag(:page3) %>
+  <%= submit_tag("21-30") %>
+<% end %>
+<%= form_tag('/paginate4', method: 'get') do %>
+  <%= hidden_field_tag(:page4) %>
+  <%= submit_tag("31-40") %>
 <% end %>
 
 <br>

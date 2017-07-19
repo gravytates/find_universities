@@ -22,4 +22,20 @@ class University < ApplicationRecord
   def self.search_by_mascot(mascot)
     JSON.parse(RestClient.get "http://localhost:3000/universities?mascot=#{mascot}")
   end
+
+  def self.paginate1
+    JSON.parse(RestClient.get "localhost:3000/universities?page=1")
+  end
+
+  def self.paginate2
+    JSON.parse(RestClient.get "localhost:3000/universities?page=2")
+  end
+
+  def self.paginate3
+    JSON.parse(RestClient.get "localhost:3000/universities?page=3")
+  end
+
+  def self.paginate4
+    JSON.parse(RestClient.get "localhost:3000/universities?page=4")
+  end
 end
