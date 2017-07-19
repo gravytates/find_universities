@@ -14,4 +14,12 @@ class University < ApplicationRecord
   def self.search_by_description(description)
     JSON.parse(RestClient.get "http://localhost:3000/universities?description=#{description}")
   end
+
+  def self.search_by_population(population)
+    JSON.parse(RestClient.get "http://localhost:3000/universities?population=#{population}")
+  end
+
+  def self.search_by_mascot(mascot)
+    JSON.parse(RestClient.get "http://localhost:3000/universities?mascot=#{mascot}")
+  end
 end

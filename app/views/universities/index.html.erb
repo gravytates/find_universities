@@ -1,15 +1,41 @@
 <h1>Universities</h1>
 
 <%= form_tag('/name_search', method: 'get') do %>
-  <%= label_tag(:name, "Search by name:") %>
+  <%= label_tag(:name, "Search by name") %>
+  <br>
   <%= text_field_tag(:name) %>
+  <br>
   <%= submit_tag("Name Search") %>
 <% end %>
 
+<br>
+
 <%= form_tag('/description_search', method: 'get') do %>
-  <%= label_tag(:description, "Search by school description:") %>
+  <%= label_tag(:description, "Search by school description") %>
+  <br>
   <%= text_field_tag(:description) %>
+  <br>
   <%= submit_tag("Description Search") %>
+<% end %>
+
+<br>
+
+<%= form_tag('/population_search', method: 'get') do %>
+  <%= label_tag(:population, "Search by school population") %>
+  <br>
+  <%= text_field_tag(:population) %>
+  <br>
+  <%= submit_tag("Population Search") %>
+<% end %>
+
+<br>
+
+<%= form_tag('/mascot_search', method: 'get') do %>
+  <%= label_tag(:mascot, "Search by school mascot") %>
+  <br>
+  <%= text_field_tag(:mascot) %>
+  <br>
+  <%= submit_tag("Mascot Search") %>
 <% end %>
 
 <br>

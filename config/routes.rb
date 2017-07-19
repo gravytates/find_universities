@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get "/name_search" => "universities#index"
   get "/description_search" => "universities#index"
-
+  get "/population_search" => "universities#index"
+  get "/mascot_search" => "universities#index"
 
 end

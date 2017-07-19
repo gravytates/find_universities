@@ -1,7 +1,7 @@
 class UniversitiesController < ApplicationController
   def index
     @universities = University.get_universities
-    binding.pry
+    # binding.pry
     if params[:name]
       name = params[:name]
       @universities = University.search_by_name(name)
