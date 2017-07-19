@@ -1,5 +1,6 @@
 class UniversitiesController < ApplicationController
   def index
-    @universities = University.all
+    @universities = University.get_universities
+    binding.pry
   end
 end
