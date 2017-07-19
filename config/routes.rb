@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   get "/name_search" => "universities#index"
+  get "/description_search" => "universities#index"
 
 
 end
