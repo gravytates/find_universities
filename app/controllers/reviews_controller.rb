@@ -1,19 +1,18 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
+
   def new
-    Review.new
+    @review = Review.new
+    @university = University.find_university(params[:id])
   end
 
   def create
-    university = University.find_university(params[:id])
-    review = university.reviews.create(review_params)
-    review.user_id = current_user.id
-    review.create_review
-
+    Review.create_review(review_params)
+    redirect_to university_path(review_params[:university_id])
   end
 
 private
   def review_params
-    params.require(:review).permit(:author, :content, :rating)
+    params.require(:review).permit(:author, :content, :rating, :university_id)
   end
 end

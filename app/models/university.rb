@@ -1,6 +1,5 @@
 class University < ApplicationRecord
   validates :name, presence: true
-  has_many :reviews
 
 # UNIVERSITY INDEX PAGE WITH SCOPED API CALLS
   def self.get_universities

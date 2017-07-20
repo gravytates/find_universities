@@ -1,0 +1,13 @@
+<%= form_for @review do |f| %>
+  <%= f.hidden_field :university_id, value: @university['id'] %>
+  <%= f.label :author %>
+  <%= f.text_field :author, class: :"form-control" %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content, class: :"form-control" %>
+
+  <%= f.label :rating %>
+  <%= f.text_field :rating, class: :"form-control", type: :number %>
+
+  <%= f.submit %>
+<% end %>

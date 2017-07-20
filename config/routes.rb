@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "home#index"
-  resources :universities do
-    resources :reviews
-  end
+  resources :universities
+  resources :reviews
+
 
   get "/name_search" => "universities#index"
   get "/description_search" => "universities#index"
