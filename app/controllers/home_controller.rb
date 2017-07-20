@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
-    current_user.encrypt(current_user)
+    token = current_user.encrypt(current_user)
+    current_user.decrypt(token)
   end
 end
