@@ -46,7 +46,7 @@
 
 <% @universities.each do |university| %>
   <div class="well">
-    <h3><%= university['name']%></h3>
+    <h3> <%= link_to "#{university['name']}", university_path(university['id']) %></h3>
     <p>Description:</p>
     <p><%= university['description']%></p>
     <p>Mascot: <em><%= university['mascot']%></em></p>

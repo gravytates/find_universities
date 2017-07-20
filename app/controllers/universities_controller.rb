@@ -18,4 +18,8 @@ class UniversitiesController < ApplicationController
       @universities = University.get_universities.paginate(page: params[:page], per_page: 5)
     end
   end
+
+  def show
+    @university = University.university_details(params[:id])
+  end
 end

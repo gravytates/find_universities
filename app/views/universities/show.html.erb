@@ -1,0 +1,10 @@
+<h1><%= @university['name'] %></h1>
+
+<h3>Reviews for this University</h3>
+<% @university['reviews'].each do |review| %>
+  <div class="well">
+    <h4>Author: <%= review['author'] %></h4>
+    <h4>Rating: <%= review['rating'] %> </h4>
+    <p><%= review['content'] %></p>
+  </div>
+<% end %>
