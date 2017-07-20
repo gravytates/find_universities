@@ -1,6 +1,8 @@
 require 'will_paginate/array'
 
 class UniversitiesController < ApplicationController
+  before_action :authenticate_user!, :except => [:index, :show]
+
   def index
     if params[:name]
       name = params[:name]
@@ -20,6 +22,6 @@ class UniversitiesController < ApplicationController
   end
 
   def show
-    @university = University.university_details(params[:id])
+    @university = University.find_university(params[:id])
   end
 end

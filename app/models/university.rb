@@ -24,7 +24,7 @@ class University < ApplicationRecord
   end
 
 # INDIVIDUAL UNIVERSITY PAGE API CALLS
-  def self.university_details(id)
+  def self.find_university(id)
     JSON.parse(RestClient.get "http://localhost:3000/universities/#{id}")
   end
 end
